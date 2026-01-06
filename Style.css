@@ -1,0 +1,353 @@
+/* Grunnstil */
+body {
+    margin: 0;
+    font-family: Tahoma, sans-serif;
+    background-color: #000;
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #302d2d;
+    padding: 10px 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Venstre side: lenker */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: none;
+}
+
+/* Aktiv knapp med “backglow” */
+.nav-links a.active {
+    background-color: #222;
+    box-shadow: 0 0 10px #a09797;
+}
+
+/* Høyre side: logo + navn */
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    height: 55px;
+}
+
+.company-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/* --- Laget-side --- */
+
+/* Hero-intro */
+.team-hero {
+    background: radial-gradient(circle at top, #1b1b1b 0%, #000 100%);
+    text-align: center;
+    color: white;
+    padding: 120px 20px 80px;
+}
+
+.team-intro {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.team-intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.team-intro h1 span {
+    background: linear-gradient(90deg, #00b4ff, #5edfff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.team-intro p {
+    color: #ccc;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Team Grid */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    padding: 70px 40px;
+    background-color: #0d0d0d;
+    justify-items: center;
+}
+
+.team-card {
+    background: linear-gradient(145deg, #101010, #181818);
+    border-radius: 15px;
+    padding: 25px 20px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.team-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(135deg, #00b4ff, #5edfff, #7effa1);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.team-card:hover::before {
+    opacity: 1;
+}
+
+.team-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px rgba(0, 180, 255, 0.25);
+}
+
+.team-card h3 {
+    color: #5edfff;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.team-card p {
+    color: #ddd;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Rollespesifikke farger */
+.team-card.leader::before { background: linear-gradient(135deg, #0072ff, #00c6ff); }
+.team-card.economy::before { background: linear-gradient(135deg, #00ffb3, #00c851); }
+.team-card.marketing::before { background: linear-gradient(135deg, #ff6b6b, #f94d00); }
+.team-card.comms::before { background: linear-gradient(135deg, #ffc107, #ff9500); }
+.team-card.sales::before { background: linear-gradient(135deg, #b25cff, #6f00ff); }
+.team-card.production::before { background: linear-gradient(135deg, #5edfff, #3a7bd5); }
+
+/* Mentor */
+.mentor-section {
+    background-color: #111;
+    padding: 80px 20px;
+    text-align: center;
+    border-top: 1px solid #222;
+}
+
+.mentor-section h2 {
+    color: #5edfff;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.mentor-section p {
+    color: #ccc;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- Hero Section --- */
+.hero {
+    background: radial-gradient(circle at top, #222 0%, #000 100%);
+    color: white;
+    text-align: center;
+    padding: 140px 20px 100px;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero h1 span {
+    background: linear-gradient(90deg, #00b4ff, #5edfff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #ccc;
+    margin-bottom: 40px;
+}
+
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(90deg, #00b4ff, #0072ff);
+    color: white;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 114, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: linear-gradient(90deg, #0072ff, #00b4ff);
+    box-shadow: 0 0 20px rgba(0, 114, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+/* --- About Section --- */
+.about {
+    background-color: #111;
+    padding: 80px 20px;
+    text-align: center;
+    border-top: 1px solid #222;
+}
+
+.about-text {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about h2 {
+    color: #5edfff;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about p {
+    color: #ccc;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* --- Produkt-side --- */
+
+/* Hero intro */
+.product-hero {
+    background: radial-gradient(circle at top, #1b1b1b 0%, #000 100%);
+    text-align: center;
+    color: white;
+    padding: 120px 20px 80px;
+}
+
+.product-intro {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.product-intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #00b4ff, #5edfff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.product-intro p {
+    color: #ccc;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 60px 40px;
+    background-color: #0d0d0d;
+}
+
+.product-card {
+    background: linear-gradient(145deg, #101010, #181818);
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px rgba(0, 180, 255, 0.25);
+    border-color: rgba(0, 180, 255, 0.4);
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.product-card h3 {
+    color: #5edfff;
+    font-size: 1.3rem;
+    margin: 15px 0 8px;
+}
+
+.product-card p {
+    color: #ccc;
+    font-size: 1rem;
+    margin: 0 20px 25px;
+    line-height: 1.6;
+}
+
+/* Levering-info */
+.delivery-info {
+    background-color: #111;
+    padding: 70px 20px;
+    text-align: center;
+    border-top: 1px solid #222;
+}
+
+.delivery-info h2 {
+    color: #5edfff;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.delivery-info p {
+    color: #ccc;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
